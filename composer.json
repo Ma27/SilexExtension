@@ -1,4 +1,11 @@
 {
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Maximilian Bosch",
+            "email": "ma27-se@hotmail.com"
+        }
+    ],
     "require": {
         "php": ">=5.4"
     }
