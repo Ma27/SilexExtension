@@ -5,6 +5,6 @@ use Symfony\Component\HttpKernel\Event\GetResponseForControllerResultEvent;
 
 interface FilterInterface
 {
-    public function filterResponse(GetResponseForControllerResultEvent $result);
+    public function filterResponse(GetResponseForControllerResultEvent &$result);
     public function getSubscribedControllers();
 }

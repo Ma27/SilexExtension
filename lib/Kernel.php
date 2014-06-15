@@ -112,6 +112,10 @@ abstract class Kernel extends Application
                 }
             }
             
+            if ($event->hasResponse()) {
+                return;
+            }
+            
             
         });
     }
