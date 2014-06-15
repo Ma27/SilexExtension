@@ -2,6 +2,7 @@
 namespace Ma27\SilexExtension;
 
 use Silex\Application;
+use Symfony\Component\HttpKernel\KernelEvents;
 
 abstract class Kernel extends Application
 {
@@ -87,11 +88,32 @@ abstract class Kernel extends Application
             
             $this[Parameters::HANDLER_STACK][] = $actionHandler;
         }
+        
+        // change resolver
+        $this->extend('resolver', function($prevResolver, $app) {
+            return new ControllerResolver($app, $app['logger']);
+        });
     }
     
     protected function generateView()
     {
+        $app = &$this;
+        $this->on(KernelEvents::TERMINATE, function($event) use($app) {
+            foreach ($app->getBundles() as $bundle) {
+                $bundle->onShutDown($app);
+            }
+        });
         
+        $this->on(KernelEvents::VIEW, function($event) use($app) {
+            $actionId = $app[Parameters::CURRENT_ACTION_ID];
+            foreach ($app[Parameters::HANDLER_STACK] as $handler) {
+                if (in_array($actionId, $handler->getSubscribedControllers())) {
+                    $handler->filterResponse($event);
+                }
+            }
+            
+            
+        });
     }
     
     protected function init()
@@ -105,4 +127,9 @@ abstract class Kernel extends Application
     
     abstract public function registerBundles();
     abstract public function getApplicationConfigPath();
+    
+    public static function generateControllerActionId($controllerName, $controllerMethod)
+    {
+        return md5(sprintf('%s|%s', $controllerName, $controllerMethod));
+    }
 }
