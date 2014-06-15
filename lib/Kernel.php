@@ -11,5 +11,11 @@ abstract class Kernel extends Application
     {
         parent::__construct(['debug' => (bool)$debug]);
         $this->env = (string)$env;
+        
+        $this->init();
+    }
+    
+    protected function init()
+    {
     }
 }
