@@ -6,6 +6,7 @@ use Symfony\Component\HttpKernel\KernelEvents;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\BinaryFileResponse;
+use Igorw\Silex\ConfigServiceProvider;
 
 abstract class Kernel extends Application
 {
@@ -49,7 +50,7 @@ abstract class Kernel extends Application
                     . 'be found!', $filePath));
             }
             
-            $this->register(new \Igorw\Silex\ConfigServiceProvider($filePath));
+            $this->register(new ConfigServiceProvider($filePath));
         }
     }
     
