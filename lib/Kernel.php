@@ -1,8 +1,15 @@
 <?php
+namespace Ma27\SilexExtension;
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+use Silex\Application;
 
+abstract class Kernel extends Application
+{
+    private $env;
+    
+    public function __construct($env, $debug = true)
+    {
+        parent::__construct(['debug' => (bool)$debug]);
+        $this->env = (string)$env;
+    }
+}
