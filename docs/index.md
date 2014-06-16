@@ -69,7 +69,9 @@ It would be better if you use in attachRoutes() $kernel->mount()
 ### Filter concept
 
 The filter concept can be used to generate http responses. Use concrete filters to create a 
-view for a specific controllers.
+view for a specific controllers. The filterResponse() can return nothing or an associative array 
+which will be used for the render process. If the template engine is inexistent, these values 
+will be sent as headers.
 
     <?php
     namespace Foo;
@@ -158,7 +160,8 @@ You can use this attribute via \Ma27\SilexExtension\Parameters::TEMPLATE_KEY.
 If this value is inexistent or contains null in the request, the controller result 
 will be rendered directly.
 If there's no template engine registered, the templates will be printed without the 
-render process.
+render process. The attributes array is the merged list of all returned lists from the 
+executed filters.
 
     <?php
     // register an engine:
