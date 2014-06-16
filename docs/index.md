@@ -68,4 +68,37 @@ It would be better if you use in attachRoutes() $kernel->mount()
 
 ### Filter concept
 
-The filter concept can be used to generate http responses
+The filter concept can be used to generate http responses. Use concrete filters to create a 
+view for a specific controllers.
+
+    <?php
+    namespace Foo;
+
+    class Controller
+    {
+        public function currentAction()
+        {
+            return 'any execution which is executed currently';
+        }
+    }
+
+    // at the filter
+    use Foo\Controller;
+    use Symfony\Component\HttpFoundation\Response;
+
+    class CustomFilter implements \Ma27\SilexExtension\FilterInterface
+    {
+        public function filterResponse(\Symfony\Component\HttpKernel\Event\GetResponseForControllerResultEvent &$result)
+        {
+            $result->setResponse(new Response(strtoupper($result->getControllerResult())));
+        }
+
+        public function getSubscribedActions()
+        {
+            return [\Ma27\SilexExtension\Kernel::generateControllerActionId(Controller::class, 'currentAction')];
+        }
+    }
+
+    // output:
+    ANY EXECUTION WHICH IS EXECUTED CURRENTLY
+

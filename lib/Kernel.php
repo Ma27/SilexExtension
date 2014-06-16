@@ -164,7 +164,7 @@ abstract class Kernel extends Application
                     . 'type of %s', get_class($actionHandler), FilterInterface::class));
             }
             
-            $this[Parameters::HANDLER_STACK][] = $actionHandler;
+            $this[Parameters::HANDLER_STACK] = array_merge($this[Parameters::HANDLER_STACK], [$actionHandler]);
         }
         
         // change resolver
@@ -263,17 +263,17 @@ abstract class Kernel extends Application
             return $output;
         }
         if ($output instanceof \SplFileInfo) {
-            return new BinaryFileResponse($output, $additionHeaders);
+            return new BinaryFileResponse($output, 200, $additionHeaders);
         }
         if (is_object($output) || is_array($output)) {
-            return new JsonResponse(json_encode($output, $additionHeaders));
+            return new JsonResponse(json_encode($output, 200, $additionHeaders));
         }
         
         json_decode($output);
         if (json_last_error() === JSON_ERROR_NONE && !empty($output)) {
-            return new JsonResponse($output, $additionHeaders);
+            return new JsonResponse($output, 200, $additionHeaders);
         }
-        return new Response($output, $additionHeaders);
+        return new Response($output, 200, $additionHeaders);
     }
     
     /**
