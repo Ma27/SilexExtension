@@ -108,3 +108,43 @@ view for a specific controllers.
 This extension has also a configuration concept. You can register files containing parameters which will be 
 injected into the application container.
 
+Example:
+
+    <?php
+    // filePath: /
+    class AppKernel extends \Ma27\SilexExtension\Kernel
+    {
+        // register bundles
+        
+        public function getApplicationConfigPath()
+        {
+            return __DIR__ . '/config';
+        }
+
+        public function __construct()
+        {
+            parent::__construct('prod', false);
+        }
+    }
+
+    // filePath: /config
+    // config file: /config/app_prod.php
+    return array(
+        'params.php'
+    );
+
+    // /config/params.php
+    return array(
+        'key' => 'value'
+    );
+
+    // some bundle file
+    // class declaration
+    public function createDependencies(Kernel &$kernel)
+    {
+        $kernel['foo'] = new Bar($kernel['key']);
+    }
+    // other methods
+
+In this example the service "foo" is an instance of "Bar" and the value of $kernel['key'] 
+is value
