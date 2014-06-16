@@ -102,3 +102,9 @@ view for a specific controllers.
     // output:
     ANY EXECUTION WHICH IS EXECUTED CURRENTLY
 
+
+### Configuration
+
+This extension has also a configuration concept. You can register files containing parameters which will be 
+injected into the application container.
+
