@@ -148,3 +148,12 @@ Example:
 
 In this example the service "foo" is an instance of "Bar" and the value of $kernel['key'] 
 is value
+
+###Templating
+
+Another feature is the templating support. This feature is optional only.
+If no filter sets a response you can render our results.
+To set a template you need to add the request attribute "result.params.template"
+You can use this attribute via \Ma27\SilexExtension\Parameters::TEMPLATE_KEY.
+If this value is inexistent or contains null in the request, the controller result 
+will be rendered directly.

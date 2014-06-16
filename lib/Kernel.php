@@ -214,22 +214,31 @@ abstract class Kernel extends Application
                 $template = $event->getControllerResult();
             }
             
+            $response = $app->createResponse($template);
+            if (get_class($response) !== Response::class) {
+                $event->setResponse($response);
+                return;
+            }
+            
             try {
                 if (!isset($app[Parameters::TEMPLATE_ENGINE])) {
-                    throw new \Exception(null);
+                    $report = null;
+                    throw new \LogicException($report);
                 }
                 
-                $event->setResponse($app->createResponse(
-                    $app[Parameters::TEMPLATE_ENGINE]->render($template, $attributes)));
-                return;
+                $content = $response->getContent();
+                $newResponse = $app->createResponse(
+                    $app[Parameters::TEMPLATE_ENGINE]->render($content, $attributes));
             } catch (\Exception $ex) {
-                if (null !== $app['logger'] && null === $ex->getMessage()) {
-                    $app['logger']->critical('Render exception occurred: ' . $ex->getMessage());
+                if (null !== $ex->getMessage()) {
+                    throw $ex;
                 }
                 
-                $event->setResponse($app->createResponse($template, $attributes));
+                $response->headers->add($attributes);
+                $newResponse = clone $response;
             }
-        });
+            $event->setResponse($newResponse);
+       });
     }
     
     /**
