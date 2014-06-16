@@ -10,7 +10,7 @@ better structures
 Usage:
 ------
 
-###Using bundles:
+###Using bundles
 The kernel class is abstract so you it is required to inherit this class:
 
     <?php
