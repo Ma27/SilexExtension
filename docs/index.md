@@ -59,7 +59,13 @@ Sample implementation of FooBundle:
 #### Hint:
 in your attachRoutes it would be better if you use there $kernel->mount()
 
+#### Meaning of the methods
  * onSetUp: In this method you can create a custom setup of your module or register configuration parameters
  * attachRoutes: Here you can create routes of your modules
  * createDependencies: In this method you can register provider and custom services of your module
  * onShutDown: All commands containing this method will be executed after the response has been sended
+
+
+### Filter concept
+
+The filter concept can be used to generate http responses
