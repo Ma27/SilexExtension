@@ -57,7 +57,7 @@ Sample implementation of FooBundle:
     }
 
 #### Hint:
-in your attachRoutes it would be better if you use there $kernel->mount()
+It would be better if you use in attachRoutes() $kernel->mount()
 
 #### Meaning of the methods
  * onSetUp: In this method you can create a custom setup of your module or register configuration parameters
