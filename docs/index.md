@@ -153,7 +153,21 @@ is value
 
 Another feature is the templating support. This feature is optional only.
 If no filter sets a response you can render our results.
-To set a template you need to add the request attribute "result.params.template"
+To set a template you need to add the request attribute "result.params.template".
 You can use this attribute via \Ma27\SilexExtension\Parameters::TEMPLATE_KEY.
 If this value is inexistent or contains null in the request, the controller result 
 will be rendered directly.
+If there's no template engine registered, the templates will be printed without the 
+render process.
+
+    <?php
+    // register an engine:
+    $app[\Ma27\SilexExtension\Parameters::TEMPLATE_ENGINE] = new FooEngine();
+
+    class FooEngine implements \Ma27\SilexExtension\Templating\DriverInterface
+    {
+        public function render($output, array $attributes = [])
+        {
+            // render output and return result
+        }
+    }
