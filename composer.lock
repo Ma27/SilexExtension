@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "aafbba58e01003bfddfd3b9d65082e25",
+    "hash": "15aa4f4b9602a757acdf945536816081",
     "packages": [
         {
             "name": "igorw/config-service-provider",
@@ -62,96 +62,6 @@
                 "silex"
             ],
             "time": "2013-10-30 14:42:08"
-        },
-        {
-            "name": "mustache/mustache",
-            "version": "v2.6.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/bobthecow/mustache.php.git",
-                "reference": "43dc9457a2089cf86c0f7fdb79fcdc516293a4b6"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/bobthecow/mustache.php/zipball/43dc9457a2089cf86c0f7fdb79fcdc516293a4b6",
-                "reference": "43dc9457a2089cf86c0f7fdb79fcdc516293a4b6",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.2.4"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "*"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "Mustache": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Justin Hileman",
-                    "email": "justin@justinhileman.info",
-                    "homepage": "http://justinhileman.com"
-                }
-            ],
-            "description": "A Mustache implementation in PHP.",
-            "homepage": "https://github.com/bobthecow/mustache.php",
-            "keywords": [
-                "mustache",
-                "templating"
-            ],
-            "time": "2014-04-14 01:24:40"
-        },
-        {
-            "name": "mustache/silex-provider",
-            "version": "v1.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/bobthecow/mustache-silex-provider.git",
-                "reference": "cf68561b094049f327baaaa0f3c625c313ca795c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/bobthecow/mustache-silex-provider/zipball/cf68561b094049f327baaaa0f3c625c313ca795c",
-                "reference": "cf68561b094049f327baaaa0f3c625c313ca795c",
-                "shasum": ""
-            },
-            "require": {
-                "mustache/mustache": "~2.1",
-                "php": ">=5.3.3",
-                "silex/silex": "~1.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "Mustache": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Justin Hileman",
-                    "email": "justin@justinhileman.info",
-                    "homepage": "http://justinhileman.com"
-                }
-            ],
-            "description": "A Mustache service provider for Silex.",
-            "homepage": "https://github.com/bobthecow/mustache-silex-provider",
-            "keywords": [
-                "mustache",
-                "silex",
-                "templating"
-            ],
-            "time": "2013-12-28 19:10:00"
         },
         {
             "name": "pimple/pimple",
@@ -337,16 +247,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Debug.git",
-                "reference": "342dc52465f509f4ba5a8312ee1052a2d6f05101"
+                "reference": "4bd5484d456e6263acc6429fabea7e2fbc74fffc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Debug/zipball/342dc52465f509f4ba5a8312ee1052a2d6f05101",
-                "reference": "342dc52465f509f4ba5a8312ee1052a2d6f05101",
+                "url": "https://api.github.com/repos/symfony/Debug/zipball/4bd5484d456e6263acc6429fabea7e2fbc74fffc",
+                "reference": "4bd5484d456e6263acc6429fabea7e2fbc74fffc",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.3"
+                "php": ">=5.3.3",
+                "psr/log": "~1.0"
             },
             "require-dev": {
                 "symfony/http-foundation": "~2.1",
@@ -367,7 +278,7 @@
                     "Symfony\\Component\\Debug\\": ""
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "notification-url": "http://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -385,7 +296,7 @@
             ],
             "description": "Symfony Debug Component",
             "homepage": "http://symfony.com",
-            "time": "2014-06-07 15:54:31"
+            "time": "2014-06-16 11:52:56"
         },
         {
             "name": "symfony/event-dispatcher",
@@ -453,12 +364,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/HttpFoundation.git",
-                "reference": "efa2b935a1305a578aef7fc22a28ad5204969927"
+                "reference": "bc23b721ae465a6bb73478e3b13a9eef5d06ef01"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/HttpFoundation/zipball/efa2b935a1305a578aef7fc22a28ad5204969927",
-                "reference": "efa2b935a1305a578aef7fc22a28ad5204969927",
+                "url": "https://api.github.com/repos/symfony/HttpFoundation/zipball/bc23b721ae465a6bb73478e3b13a9eef5d06ef01",
+                "reference": "bc23b721ae465a6bb73478e3b13a9eef5d06ef01",
                 "shasum": ""
             },
             "require": {
@@ -481,7 +392,7 @@
                     "Symfony/Component/HttpFoundation/Resources/stubs"
                 ]
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "notification-url": "http://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -499,7 +410,7 @@
             ],
             "description": "Symfony HttpFoundation Component",
             "homepage": "http://symfony.com",
-            "time": "2014-06-06 03:57:03"
+            "time": "2014-06-16 09:30:12"
         },
         {
             "name": "symfony/http-kernel",
@@ -508,19 +419,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/HttpKernel.git",
-                "reference": "e17c6c3d93070c0a3f0469de025d15201ab7d107"
+                "reference": "565dc6789d8e93a3fd1778ccafd7293c35fb4293"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/HttpKernel/zipball/e17c6c3d93070c0a3f0469de025d15201ab7d107",
-                "reference": "e17c6c3d93070c0a3f0469de025d15201ab7d107",
+                "url": "https://api.github.com/repos/symfony/HttpKernel/zipball/565dc6789d8e93a3fd1778ccafd7293c35fb4293",
+                "reference": "565dc6789d8e93a3fd1778ccafd7293c35fb4293",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3",
                 "psr/log": "~1.0",
                 "symfony/debug": "~2.5",
-                "symfony/event-dispatcher": "~2.1",
+                "symfony/event-dispatcher": "~2.5",
                 "symfony/http-foundation": "~2.4"
             },
             "require-dev": {
@@ -554,7 +465,7 @@
                     "Symfony\\Component\\HttpKernel\\": ""
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "notification-url": "http://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -572,7 +483,7 @@
             ],
             "description": "Symfony HttpKernel Component",
             "homepage": "http://symfony.com",
-            "time": "2014-06-03 15:24:49"
+            "time": "2014-06-12 17:00:29"
         },
         {
             "name": "symfony/routing",
@@ -898,12 +809,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "d9e7d325fb4517bc2a422295a77e57d2f1a6a80d"
+                "reference": "9bd3225f17929c73cdf52e0f9eba29894f37878c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/d9e7d325fb4517bc2a422295a77e57d2f1a6a80d",
-                "reference": "d9e7d325fb4517bc2a422295a77e57d2f1a6a80d",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/9bd3225f17929c73cdf52e0f9eba29894f37878c",
+                "reference": "9bd3225f17929c73cdf52e0f9eba29894f37878c",
                 "shasum": ""
             },
             "require": {
@@ -942,7 +853,7 @@
                     "src/"
                 ]
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "notification-url": "http://packagist.org/downloads/",
             "include-path": [
                 "",
                 "../../symfony/yaml/"
@@ -964,7 +875,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2014-06-13 06:47:44"
+            "time": "2014-06-16 10:45:29"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
