@@ -2,7 +2,6 @@
 namespace Ma27\SilexExtension;
 
 use ArrayAccess;
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\HttpKernelInterface;
 
 abstract class Controller
@@ -26,7 +25,7 @@ abstract class Controller
         $request = $this->get('request');
         if (null === $request) {
             throw new \LogicException(sprintf('Request object must be type of %s!', 
-                Request::class));
+                'Symfony\Component\HttpFoundation\Request'));
         }
         
         return $request;
@@ -37,7 +36,7 @@ abstract class Controller
         $kernel = $this->get('kernel');
         if (null === $kernel) {
             throw new \LogicException(sprintf('Kernel instance must be type of %s!', 
-                HttpKernelInterface::class));
+                'Symfony\Component\HttpKernel\HttpKernelInterface'));
         }
         
         return clone $kernel;

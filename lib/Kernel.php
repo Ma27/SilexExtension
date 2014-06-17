@@ -140,7 +140,7 @@ abstract class Kernel extends Application
         foreach ($bundles as $bundle) {
             if (!$bundle instanceof BundleInterface) {
                 throw new \LogicException(sprintf('Bundle %s must be type of '
-                    . '%s!', get_class($bundle), BundleInterface::class));
+                    . '%s!', get_class($bundle), 'Ma27\SilexExtension\BundleInterface'));
             }
             
             $bundle->onSetUp($this);
@@ -161,7 +161,7 @@ abstract class Kernel extends Application
         foreach (require $handlers as $actionHandler) {
             if (!$actionHandler instanceof FilterInterface) {
                 throw new \LogicException(sprintf('Filter object %s must be '
-                    . 'type of %s', get_class($actionHandler), FilterInterface::class));
+                    . 'type of %s', get_class($actionHandler), 'Ma27\SilexExtension\FilterInterface'));
             }
             
             $this[Parameters::HANDLER_STACK] = array_merge($this[Parameters::HANDLER_STACK], [$actionHandler]);
@@ -215,7 +215,7 @@ abstract class Kernel extends Application
             }
             
             $response = $app->createResponse($template);
-            if (get_class($response) !== Response::class) {
+            if (get_class($response) !== '\Symfony\Component\HttpFoundation\Response') {
                 $event->setResponse($response);
                 return;
             }

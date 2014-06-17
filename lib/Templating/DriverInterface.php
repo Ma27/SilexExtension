@@ -3,5 +3,5 @@ namespace Ma27\SilexExtension\Templating;
 
 interface DriverInterface
 {
-    public function render($template, array $attributes = []);
+    public function render($template, array $attributes = array());
 }
