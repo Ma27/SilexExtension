@@ -7,7 +7,7 @@
         }
     ],
     "minimum-stability": "dev",
-    "name": "Ma27/Silex-Extension",
+    "name": "ma27/silex-extension",
     "require": {
         "php": ">=5.3",
         "silex/silex": "~1.1",
