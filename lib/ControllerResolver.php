@@ -4,8 +4,50 @@ namespace Ma27\SilexExtension;
 use Silex\ControllerResolver as BaseResolver;
 use Symfony\Component\HttpFoundation\Request;
 
+/**
+ * Custom resolver to get a controller by a string.<br />
+ * Usage:
+ * <p><code>
+ * // at the controller
+ * 
+ * class Controller
+ * {
+ *    public function doSthAction()
+ *    {
+ *       return 'hello world';
+ *    }
+ * }
+ * 
+ * // register controller
+ * 
+ * $kernel['controller.default'] = new Controller();
+ * 
+ * 
+ * // create route
+ * 
+ * $kernel->match('/', 'controller.default:doSth')->method('GET|POST');
+ * </code></p>
+ * 
+ * @author Maximilian Bosch <ma27-se@hotmail.com>
+ * @copyright (c) 2014 - 2018, Maximilian Bosch
+ */
 class ControllerResolver extends BaseResolver
 {
+    /**
+     * Creates a controller by the current http request.
+     * It creates the action id and initializes the controller
+     * 
+     * @param \Symfony\Component\HttpFoundation\Request $request Current http request
+     * 
+     * @return callable
+     * 
+     * @throws \InvalidArgumentException If the controller alias is empty
+     * @throws \LogicException           If the controller alias is inexistent in the app contaienr
+     * @throws \UnexpectedValueException If the controller is not an object
+     * @throws \BadMethodCallException   If the controller-action does not exist
+     * 
+     * @api
+     */
     public function getController(Request $request)
     {
         try {
