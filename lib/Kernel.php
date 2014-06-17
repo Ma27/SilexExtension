@@ -36,7 +36,7 @@ abstract class Kernel extends Application
      * 
      * @api
      */
-    public function __construct($env, $debug = true)
+    public function __construct($env, $debug = false)
     {
         parent::__construct(['debug' => (bool)$debug]);
         $this->env = (string)$env;
