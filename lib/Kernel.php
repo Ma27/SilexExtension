@@ -43,9 +43,9 @@ abstract class Kernel extends Application
         
         $this->setUpApplication();
         $this->generateView();
-        $this->loadConfiguration();
-        
         $this->init();
+        
+        $this->loadConfiguration();
     }
     
     /**
