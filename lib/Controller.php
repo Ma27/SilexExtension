@@ -102,7 +102,7 @@ abstract class Controller
      * 
      * @api
      */
-    protected function forward($controller, array $parameters = [])
+    protected function forward($controller, array $parameters = array())
     {
         $request = clone $this->getRequest();
         foreach ($parameters as $key => $value) {
