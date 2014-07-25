@@ -80,7 +80,8 @@ class ControllerServiceInjectionProviderTest extends \PHPUnit_Framework_TestCase
         $injection = new ControllerServiceInjectionProvider($class, $module = 'modulename');
 
         $injection->register($container);
-        $alias = substr(end(explode('\\', $class)), 0, -10);
+        $classNameSplit = explode('\\', $class);
+        $alias = substr($classNameSplit[count($classNameSplit) - 1], 0, -10);
 
         $this->assertTrue(isset($container[$alias = 'controller.' . $module . '.' . mb_strtolower($alias)]));
     }
