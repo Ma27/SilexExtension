@@ -88,12 +88,13 @@ abstract class Kernel extends Application
      */
     public function loadAppModules()
     {
-        // kernel paths
+        // kernel path generation
         $this->on(
             Events::PATH_CREATION,
             array(new GenerateKernelPathsListener(), 'onGeneration'),
             static::LATE_EVENT
         );
+
         $this->extend(
             'dispatcher',
             function (EventDispatcher $dispatcher, Application $app)
@@ -257,6 +258,7 @@ abstract class Kernel extends Application
                             'of "Closure"!');
                     }
                 }
+
                 if (true === $request->isXmlHttpRequest()) {
                     $values = $appResponse->attributes->all();
                     $event->setResponse(

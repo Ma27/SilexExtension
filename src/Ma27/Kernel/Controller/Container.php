@@ -14,7 +14,7 @@ class Container implements \Countable, \Iterator
 {
     /**
      * List of found files in the controller directory to scan
-     * @var \string[]
+     * @var string[]
      */
     private $fileList = array();
 
