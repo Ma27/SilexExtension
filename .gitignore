@@ -6,5 +6,7 @@ app/*
 # Composer
 composer.phar
 
-# Netbeans project directory
+# IDE directories
 nbproject/
+.idea/
+.metadata/
