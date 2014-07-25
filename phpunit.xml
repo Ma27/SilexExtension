@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="http://schema.phpunit.de/4.1/phpunit.xsd"
+         backupGlobals="false"
+         colors="true"
+         bootstrap="./tests/bootstrap.php"
+         stopOnErrors="false"
+         stopOnFailures="false">
+
+    <php>
+        <ini name="memory_limit" value="-1" />
+    </php>
+
+    <groups>
+        <exclude>vendor</exclude>
+    </groups>
+
+    <testsuites>
+        <testsuite name="Ma27 Silex Test Suite">
+            <directory>./tests</directory>
+        </testsuite>
+    </testsuites>
+
+</phpunit>
