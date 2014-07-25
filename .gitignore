@@ -1,7 +1,6 @@
 # Blocking directories
 vendor/*
 bin/*
-app/*
 
 # Composer
 composer.phar
