@@ -7,6 +7,6 @@ app/*
 composer.phar
 
 # IDE directories
-nbproject/
-.idea/
-.metadata/
+nbproject/*
+.idea/*
+.metadata/*
