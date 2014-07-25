@@ -11,7 +11,7 @@ Installation
 
     {
         "require": {
-            "php": ">=5.3",
+            "php": ">=5.4",
             "ma27/silex-extension": "v1.0.0"
         }
     }
