@@ -1,7 +1,7 @@
 {
     "name": "ma27/silex-extension",
     "description": "This is an extension for silex which provides better structures",
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "license": "MIT",
     "authors": [
         {
