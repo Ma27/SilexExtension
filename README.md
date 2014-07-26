@@ -12,7 +12,7 @@ Installation
     {
         "require": {
             "php": ">=5.4",
-            "ma27/silex-extension": "dev-master"
+            "ma27/silex-extension": "1.0.0.x-dev"
         }
     }
 
