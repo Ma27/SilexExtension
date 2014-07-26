@@ -20,5 +20,5 @@ Installation
 Run:
 ---
 
-    php composer.phar update
+    php composer.phar install
     bin/phpunit
