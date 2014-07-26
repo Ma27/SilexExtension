@@ -4,4 +4,4 @@ php:
   - 5.5
 
 install:
-  - composer update
+  - composer install
