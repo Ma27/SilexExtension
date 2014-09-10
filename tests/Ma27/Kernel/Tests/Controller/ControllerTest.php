@@ -7,7 +7,7 @@ use Symfony\Component\HttpFoundation\RequestStack;
 
 /**
  * @package Ma27\Kernel\Tests\Controller
- * @covversDefaultClass \Ma27\Kernel\Controller\Controller
+ * @coversDefaultClass \Ma27\Kernel\Controller\Controller
  */
 class ControllerTest extends \PHPUnit_Framework_TestCase
 {
